@@ -7,7 +7,8 @@ read_data_file =True
 # The header will be written if the above condition is False. This should be set
 # at the beginning of everything
 # Otherwise, information of the Python file will be written
-
+# ------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # ------------------------------------------------------------------------------
 # This source code below allow user to write/read data to/from the .csv file in the format below
 # data category 1    data category 2   ...... data category n
@@ -53,7 +54,9 @@ info = [
         reader=csv.reader(info_file,delimiter=',')
         for row in reader:
             print(row) # Print all the data from the first row to the final row
-
+# ------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Writing data to a csv file as a dictionary
 # This source code below allow user to write/read data to/from the .csv file in the format below
 # {'key 1': value 1,
@@ -73,25 +76,20 @@ with open('./info1.csv','w') as info_file:
     writer.writeheader()
     writer.writerow({'key1':value1,
                      'key1' :value2,
-					   .....
-					 'keyn' :valuen					   
+		   .....
+	    	   'keyn' :valuen					   
 })
 
 with open('./info1.csv','r') as info_file:
     reader=csv.DictReader(info_file,delimiter=',')
-		for row in reader:
-			print(row)
+    for row in reader:
+	print(row)
 
-
+# ------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 if not read_data_file:
-    print('Wrtiting the infofile\n')
-    with open('./info.csv','w') as info_file:
-        writer = csv.writer(info_file,delimiter=',')
-        writer.writerow(header)
+# Writing data to the .csv file
 else:
-    print('Reading the infofile\n')
-    with open('./info.csv','r') as info_file:
-        reader=csv.reader(info_file,delimiter=',')
-        for row in reader:
-            print(row)
+# Reading data to the .csv file
