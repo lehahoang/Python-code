@@ -4,9 +4,8 @@ This source code will write data to a .csv file. Then data reading is called aft
 import csv
 
 read_data_file =True
-# The header will be written if the above condition is False. This should be set
-# at the beginning of everything
-# Otherwise, information of the Python file will be written
+# The header will be written if the above condition is False. This condition should be set for the initialization of the data file
+# Otherwise, data from the data file will be read
 # ------------------------------------------------------------------------------
 # ------------------------------------------------------------------------------
 # ------------------------------------------------------------------------------
