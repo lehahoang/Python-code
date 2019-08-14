@@ -2,7 +2,8 @@
 This source code will write data to a .csv file. Then data reading is called afterward.
 '''
 import csv
-
+import os
+import numpy as np
 read_data_file =True
 # The header will be written if the above condition is False. This condition should be set for the initialization of the data file
 # Otherwise, data from the data file will be read
@@ -92,3 +93,48 @@ if not read_data_file:
 # Writing data to the .csv file
 else:
 # Reading data to the .csv file
+
+########################________________________######################
+'''
+    This source code dumps all needed parameters to a csv. file
+    First, it creates a file and the header field of the file
+    Second, it dumps all needed parameters row-by-row
+
+'''
+
+
+header=['Seed','Fault rate','Accuracy','Threshold','layer_name']
+
+seed=0
+fr=0.00000001
+acc=83.2
+th=99
+layer_='third layer'
+data_=[] # Data computed to have mean or std
+
+if not os.path.isfile('save.csv'):
+    with open('save.csv', 'wb') as csvfile:
+        filewriter = csv.writer(csvfile, delimiter=',')
+        filewriter.writerow(header)
+
+with open('save.csv', 'a') as csvfile:
+    filewriter = csv.writer(csvfile, delimiter=',')
+    filewriter.writerow([str(seed), str(fr), str(acc), str(th), layer_])
+# The outcome looks like:
+# Seed,Fault rate,Accuracy,Threshold,layer_name
+# 1,0.0001,96.1,None,first layer
+# 1,0.0001,96.1,None,first layer
+# 52,0.0001,96.1,None,first layer
+# 34,0.03,34.2,12.3,first layer
+#......
+
+with open('save.csv', 'r') as csvfile:
+    filereader = csv.reader(csvfile)
+    row = list(filereader)
+    # print len(row) # Number of rows
+    # print len(row[0]) # Number of columns
+    for i in range(len(row)): # A walk throuh the first column then print out the value on the 3rd column
+        if row[i][2]!='Accuracy':
+            data_.append(float(row[i][2]))
+    print(np.mean(data_))
+    print(np.std(data_))
