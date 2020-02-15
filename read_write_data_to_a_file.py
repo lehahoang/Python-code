@@ -1,5 +1,8 @@
 '''
-This source code will write data to a .csv file. Then data reading is called afterward.
+This script performs the following works:
+@ write data to a .csv file
+@ Read data from .csv file
+@ Compute the mean and std of set of data taken from .csv file
 '''
 import csv
 import os
