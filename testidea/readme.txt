@@ -19,6 +19,10 @@ Data representation used in the project:
 - Single-precision
 - (Un)signed Integer (comming soon)
 
+Fault models:
+- Random bit-flips
+- Stuck-at-faults (coming soon)
+
 Quick tutorial to use this simulator
 Coming soon
 
