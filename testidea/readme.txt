@@ -19,4 +19,6 @@ Data representation used in the project:
 - Single-precision
 - (Un)signed Integer (comming soon)
 
+Quick tutorial to use this simulator
+Coming soon
 
