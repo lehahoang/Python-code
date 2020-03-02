@@ -3,7 +3,7 @@ The main functions of the simulator:
 - Training Deep Neural Network (DNN) models
 - Doing image classification on the test set
 - Injecting bit flips at memory blocks storing DNNs' parameters
-- Evaluating the resilience of the network
+- Evaluating the resilience of the network in faulty environment
 
 Dataset used in the project:
 - CIFAR-10
@@ -12,8 +12,9 @@ Dataset used in the project:
 DNN models used in the project:
 - Lenet-5
 - AlexNet
-- VGG-16 (comming soon)
 - GoogleNet
+- VGG-16 (comming soon)
+- MobileNet (comming soon)
 
 Data representation used in the project:
 - Single-precision
